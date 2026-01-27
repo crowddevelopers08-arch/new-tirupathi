@@ -45,7 +45,7 @@ export default function ThankYou() {
                 Our dedicated team, supported by state-of-the-art technology and comprehensive in-house services, ensures you receive seamless and world-class treatment.
               </p>
               <p className="text-lg text-gray-300 text-left">
-                One of our team members will connect with you within 24 hours to assist with your queries or next steps. If you need immediate assistance, please reach out at <strong className="text-white">+91 7436856789</strong>
+                One of our team members will connect with you within 24 hours to assist with your queries or next steps. If you need immediate assistance, please reach out at <strong className="text-white">+91 89400 56789</strong>
               </p>
             </div>
             
@@ -65,7 +65,7 @@ export default function ThankYou() {
                 Return to Home
               </Link>
               <a 
-                href="tel:+917436856789" 
+                href="tel:+9189400 56789" 
                 className="border-2 border-[#d90f12] text-[#d90f12] hover:bg-[#d90f12] hover:text-white font-bold py-3 px-8 rounded-full transition-colors"
               >
                 Call Us Now
@@ -74,7 +74,7 @@ export default function ThankYou() {
             
             <div className="text-gray-300">
               <p className="font-semibold">Need immediate assistance?</p>
-              <p className="mt-2">Call us directly at: +91 7436856789</p>
+              <p className="mt-2">Call us directly at: +91 89400 56789</p>
             </div>
           </div>
         </main>

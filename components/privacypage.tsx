@@ -122,7 +122,7 @@ export default function PrivacyPolicy() {
               If you have questions or concern about this Privacy Policy, please contact us:
             </p>
             <p className="text-gray-300">
-              Phone: +91 7436856789<br />
+              Phone: +91 89400 56789<br />
               <br />
               Thank you for trusting us. Your privacy and security are our top priorities.
             </p>

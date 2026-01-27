@@ -32,7 +32,7 @@ export function ThankNavbar() {
               variant="outline" 
               className="border-[#d90f12] text-[#d90f12] hover:bg-[#d90f12] hover:text-white text-base px-6 py-2"
             >
-              <Link href="tel:+917436856789">+91 7436856789</Link>
+              <Link href="tel:+9189400 56789">+91 89400 56789</Link>
             </Button>
           </div>
 
@@ -42,8 +42,8 @@ export function ThankNavbar() {
               asChild 
               className="bg-[#d90f12] text-white hover:bg-[#b80d0f] text-sm px-5 py-3 h-auto min-h-[44px]"
             >
-              <Link href="tel:+917436856789" className="flex items-center justify-center">
-                +91 7436856789
+              <Link href="tel:+9189400 56789" className="flex items-center justify-center">
+                +91 89400 56789
               </Link>
             </Button>
           </div>
