@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Outfit } from "next/font/google"
-import Script from "next/script"
 import "./globals.css"
 
 const outfit = Outfit({
@@ -63,6 +62,50 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable} antialiased`}>
       <head>
+        {/* Google Ads Tag */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17491253863"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17491253863');
+            `,
+          }}
+        />
+
+        {/* Microsoft Clarity */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "v9ejfj6kkm");
+            `,
+          }}
+        />
+
+        {/* Google Analytics Tag */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-QNBK8JKTTS"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-QNBK8JKTTS');
+            `,
+          }}
+        />
       </head>
       <body className="font-sans">
         {children}
