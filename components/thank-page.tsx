@@ -32,7 +32,7 @@ export default function ThankYou() {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Thank You for Choosing AdgroHair
+              Thanks You for Choosing AdgroHair
             </h1>
             
             <p className="text-xl mb-8 text-gray-300">
