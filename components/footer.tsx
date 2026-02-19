@@ -26,7 +26,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
               <p className="text-base max-[425px]:text-[14px] opacity-70 text-center sm:text-left">
-                Copyright © 2025 Adgro Hair Royapuram | Powered by Adglo Skin Royapuram
+                Copyright © {new Date().getFullYear()} Adgro Hair Tirupati | Powered by Adgro Hair Tirupati
               </p>
             </div>
           </div>
