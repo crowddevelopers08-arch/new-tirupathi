@@ -158,7 +158,9 @@ const ConsultationFormPopup: React.FC<ConsultationFormPopupProps> = ({
             </div>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-3 sm:space-y-4 max-h-[80vh] overflow-y-auto">
+            <form 
+            id="adgrohairwebsiteform"
+             onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-3 sm:space-y-4 max-h-[80vh] overflow-y-auto">
               {/* Success/Error Messages */}
               {submitStatus === 'success' && (
                 <div className="bg-green-50 border border-green-200 rounded-lg p-3">
