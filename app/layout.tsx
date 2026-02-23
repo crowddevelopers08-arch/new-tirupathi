@@ -63,7 +63,7 @@ export default function RootLayout({
     <html lang="en" className={`${outfit.variable} antialiased`}>
       <head>
         {/* Google Ads Tag */}
-        <script
+        {/* <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-17491253863"
         />
@@ -76,7 +76,7 @@ export default function RootLayout({
               gtag('config', 'AW-17491253863');
             `,
           }}
-        />
+        /> */}
 
         {/* Microsoft Clarity */}
         {/* <script
