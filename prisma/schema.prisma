@@ -4,7 +4,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql" // or "mysql" or "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -13,19 +13,27 @@ model Lead {
   name         String
   phone        String
   email        String?
+  treatment    String?
   procedure    String?
   message      String?
   city         String?
   age          String?
-  preferredDate String?
+  pincode      String?
+  hairLossStage String?
+  concerns     String?
+  hairProblems String?
   consent      Boolean  @default(false)
   source       String?
   formName     String?
-  status       String   @default("NEW") // NEW, CONTACTED, CONVERTED, ERROR
+  status       String   @default("NEW") // NEW, CONTACTED, SCHEDULED, CONVERTED, LOST
   telecrmSynced Boolean @default(false)
   telecrmId    String?
   syncedAt     DateTime?
   error        String?
+  whatsappNumber String?
+  womansAgeBracket String?
+  tryingDuration String?
+  isWhatsapp   String?
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 

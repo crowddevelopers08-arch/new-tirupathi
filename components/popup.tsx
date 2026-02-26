@@ -1,3 +1,4 @@
+// components/ConsultationFormPopup.tsx
 "use client"
 
 import { useState } from "react"
@@ -58,19 +59,36 @@ const ConsultationFormPopup: React.FC<ConsultationFormPopupProps> = ({
     setIsSubmitting(true)
     setSubmitStatus("idle")
 
+    // Validate phone number
+    if (!/^[0-9]{10}$/.test(formData.phone)) {
+      setSubmitStatus("error")
+      setIsSubmitting(false)
+      alert("Please enter a valid 10-digit phone number")
+      return
+    }
+
+    // Validate pincode
+    if (!/^[0-9]{6}$/.test(formData.pincode)) {
+      setSubmitStatus("error")
+      setIsSubmitting(false)
+      alert("Please enter a valid 6-digit pincode")
+      return
+    }
+
     try {
       const leadData = {
         name: formData.fullName,
         phone: formData.phone,
         email: formData.email,
         concerns: formData.concerns,
+        procedure: formData.concerns,
+        treatment: formData.concerns,
         hairProblems: formData.hairProblems,
         message: formData.hairProblems,
         pincode: formData.pincode,
         consent: true,
-        source:
-          typeof window !== "undefined" ? window.location.href : "unknown",
-        formName: "Hair Consultation Form",
+        source: typeof window !== "undefined" ? window.location.href : "unknown",
+        formName: "website leads",
       }
 
       const response = await fetch("/api/leads", {
@@ -86,6 +104,7 @@ const ConsultationFormPopup: React.FC<ConsultationFormPopupProps> = ({
       if (result.success) {
         setSubmitStatus("success")
 
+        // Clear form
         setFormData({
           fullName: "",
           phone: "",
@@ -95,11 +114,17 @@ const ConsultationFormPopup: React.FC<ConsultationFormPopupProps> = ({
           pincode: "",
         })
 
+        // Trigger dashboard refresh
+        if (typeof window !== 'undefined') {
+          window.dispatchEvent(new CustomEvent('leadAdded'))
+        }
+
+        // Close popup and redirect
         setTimeout(() => {
           setIsOpen(false)
           setSubmitStatus("idle")
           router.push("/thank-you")
-        }, 500)
+        }, 2000)
       } else {
         throw new Error(result.error || "Failed to submit form")
       }
@@ -137,7 +162,7 @@ const ConsultationFormPopup: React.FC<ConsultationFormPopupProps> = ({
           {/* Form Container - Centered with max width constraints */}
           <div 
             className="relative bg-white rounded-xl sm:rounded-2xl shadow-2xl w-full max-w-sm sm:max-w-md mx-auto my-auto"
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside form
+            onClick={(e) => e.stopPropagation()}
           >
             {/* Close button positioned absolutely */}
             <button

@@ -1,5 +1,15 @@
-export const runtime = "nodejs";
+// app/api/leads/route.ts
 import { NextResponse } from 'next/server'
+import { PrismaClient } from '@prisma/client'
+
+// Use a singleton pattern for Prisma Client
+const globalForPrisma = globalThis as unknown as {
+  prisma: PrismaClient | undefined
+}
+
+const prisma = globalForPrisma.prisma ?? new PrismaClient()
+
+if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
 
 interface LeadData {
   name: string
@@ -10,6 +20,17 @@ interface LeadData {
   message?: string
   source?: string
   formName?: string
+  concerns?: string
+  hairProblems?: string
+  city?: string
+  age?: string
+  pincode?: string
+  hairLossStage?: string
+  consent?: boolean
+  whatsappNumber?: string
+  womansAgeBracket?: string
+  tryingDuration?: string
+  isWhatsapp?: string
 }
 
 /**
@@ -25,12 +46,19 @@ function generateFormDataString(leadData: LeadData): string {
   if (leadData.procedure) details.push(`Procedure: ${leadData.procedure}`);
   if (leadData.treatment) details.push(`Treatment: ${leadData.treatment}`);
   if (leadData.source) details.push(`Source: ${leadData.source}`);
+  if (leadData.pincode) details.push(`Pincode: ${leadData.pincode}`);
+  if (leadData.city) details.push(`City: ${leadData.city}`);
+  if (leadData.concerns) details.push(`Concerns: ${leadData.concerns}`);
+  if (leadData.hairLossStage) details.push(`Hair Loss Stage: ${leadData.hairLossStage}`);
+  if (leadData.womansAgeBracket) details.push(`Woman's Age: ${leadData.womansAgeBracket}`);
+  if (leadData.tryingDuration) details.push(`Trying Duration: ${leadData.tryingDuration}`);
   
   // Add message (truncated if too long)
-  if (leadData.message) {
-    const messagePreview = leadData.message.length > 100 
-      ? `${leadData.message.substring(0, 100)}...` 
-      : leadData.message;
+  if (leadData.message || leadData.hairProblems) {
+    const messageText = leadData.message || leadData.hairProblems || '';
+    const messagePreview = messageText.length > 100 
+      ? `${messageText.substring(0, 100)}...` 
+      : messageText;
     details.push(`Message: ${messagePreview}`);
   }
 
@@ -75,11 +103,11 @@ async function sendToTeleCRM(leadData: LeadData) {
         name: leadData.name,
         email: leadData.email || "",
         phone: leadData.phone.replace(/\D/g, ''), // Only digits
-        city_1: "",
+        city_1: leadData.city || leadData.pincode || "",
         preferredtime: "",
         preferreddate: "",
-        message: leadData.message || "",
-        select_the_procedure: leadData.procedure || leadData.treatment || "",
+        message: leadData.message || leadData.hairProblems || "",
+        select_the_procedure: leadData.procedure || leadData.treatment || leadData.concerns || "",
         Country: "",
         LeadID: "",
         "CreatedOn": new Date().toLocaleString('en-US', {
@@ -95,7 +123,7 @@ async function sendToTeleCRM(leadData: LeadData) {
         "Lead Request Type": "consultation",
         "PageName": pageName,
         "State": "",
-        "Age": "",
+        "Age": leadData.age || leadData.womansAgeBracket || "",
         "FormName": formName
       },
       actions: [
@@ -113,11 +141,11 @@ async function sendToTeleCRM(leadData: LeadData) {
         },
         {
           "type": "SYSTEM_NOTE",
-          "text": `Procedure/Treatment: ${leadData.procedure || leadData.treatment || 'Not specified'}`
+          "text": `Procedure/Treatment: ${leadData.procedure || leadData.treatment || leadData.concerns || 'Not specified'}`
         },
         {
           "type": "SYSTEM_NOTE",
-          "text": `Form Type: Popup Form`
+          "text": `Pincode: ${leadData.pincode || 'Not provided'}`
         }
       ]
     }
@@ -186,7 +214,7 @@ async function sendToTeleCRM(leadData: LeadData) {
 }
 
 /**
- * Handle POST request for popup form
+ * Handle POST request for storing leads in database and sending to TeleCRM
  */
 export async function POST(request: Request) {
   let data: LeadData;
@@ -202,38 +230,109 @@ export async function POST(request: Request) {
       )
     }
 
-    // Set form name for popup form
-    data.formName = 'website leads';
+    // Set form name if not provided
+    data.formName = data.formName || 'website leads';
     data.source = data.source || 'swakkaya';
 
-    // Send to TeleCRM
+    // STEP 1: Save to PostgreSQL database using Prisma
+    console.log('Saving lead to database...');
+    
+    let dbLead;
+    try {
+      dbLead = await prisma.lead.create({
+        data: {
+          name: data.name,
+          phone: data.phone,
+          email: data.email || null,
+          treatment: data.treatment || data.procedure || data.concerns || null,
+          procedure: data.procedure || data.concerns || null,
+          message: data.message || data.hairProblems || null,
+          concerns: data.concerns || null,
+          hairProblems: data.hairProblems || null,
+          city: data.city || null,
+          age: data.age || null,
+          pincode: data.pincode || null,
+          hairLossStage: data.hairLossStage || null,
+          consent: data.consent || true,
+          source: data.source,
+          formName: data.formName,
+          status: 'NEW',
+          telecrmSynced: false,
+          whatsappNumber: data.whatsappNumber || null,
+          womansAgeBracket: data.womansAgeBracket || null,
+          tryingDuration: data.tryingDuration || null,
+          isWhatsapp: data.isWhatsapp || null,
+        },
+      });
+      
+      console.log('Lead saved to database with ID:', dbLead.id);
+    } catch (dbError) {
+      console.error('Database save failed:', dbError);
+      return NextResponse.json(
+        { 
+          success: false, 
+          error: 'Failed to save lead to database',
+          details: dbError instanceof Error ? dbError.message : 'Unknown database error'
+        },
+        { status: 500 }
+      );
+    }
+
+    // STEP 2: Send to TeleCRM
     let telecrmResponse = null;
     let telecrmError = null;
+    let telecrmSynced = false;
 
     try {
       telecrmResponse = await sendToTeleCRM(data);
-      console.log('Popup form lead sent to TeleCRM successfully');
+      telecrmSynced = true;
+      console.log('Lead sent to TeleCRM successfully');
+      
+      // STEP 3: Update the lead with TeleCRM sync status
+      if (dbLead) {
+        await prisma.lead.update({
+          where: { id: dbLead.id },
+          data: {
+            telecrmSynced: true,
+            telecrmId: telecrmResponse?.id || telecrmResponse?.leadId || null,
+            syncedAt: new Date(),
+          },
+        });
+        console.log('Database lead updated with TeleCRM sync status');
+      }
     } catch (error) {
       telecrmError = error;
       console.error('TeleCRM submission failed:', error instanceof Error ? error.message : String(error));
+      
+      // Update database to reflect TeleCRM sync failure
+      if (dbLead) {
+        await prisma.lead.update({
+          where: { id: dbLead.id },
+          data: {
+            telecrmSynced: false,
+            error: error instanceof Error ? error.message : 'TeleCRM sync failed',
+          },
+        });
+      }
     }
 
     return NextResponse.json(
       {
         success: true,
-        telecrmSynced: !telecrmError,
+        leadId: dbLead.id,
+        telecrmSynced: telecrmSynced,
         telecrmResponse: telecrmResponse,
         telecrmError: telecrmError ? (telecrmError instanceof Error ? telecrmError.message : String(telecrmError)) : null,
         timestamp: new Date().toISOString(),
-        formName: 'website leads',
+        formName: data.formName,
         message: telecrmError 
-          ? 'Form submitted but TeleCRM sync failed' 
-          : 'Form submitted successfully and synced with TeleCRM'
+          ? 'Form submitted to database but TeleCRM sync failed' 
+          : 'Form submitted successfully to database and synced with TeleCRM'
       },
       { status: 201 }
     )
   } catch (error) {
-    console.error('Popup form submission error:', error)
+    console.error('Form submission error:', error)
 
     return NextResponse.json(
       {
@@ -241,7 +340,115 @@ export async function POST(request: Request) {
         error: 'Failed to process form submission',
         details: error instanceof Error ? error.message : 'Unknown error',
         referenceId: `ERR-${Date.now()}`,
-        formName: 'website leads'
+        formName: data?.formName || 'unknown'
+      },
+      { status: 500 }
+    )
+  }
+}
+
+/**
+ * Handle GET request to fetch leads for the admin dashboard
+ */
+export async function GET(request: Request) {
+  try {
+    const { searchParams } = new URL(request.url)
+    const limit = parseInt(searchParams.get('limit') || '100')
+    const status = searchParams.get('status')
+    const formName = searchParams.get('formName')
+    const search = searchParams.get('search')
+    
+    // Build filter conditions
+    const where: any = {}
+    
+    if (status && status !== 'all') {
+      where.status = status.toUpperCase()
+    }
+    
+    if (formName && formName !== 'all') {
+      where.formName = formName
+    }
+    
+    if (search) {
+      where.OR = [
+        { name: { contains: search, mode: 'insensitive' } },
+        { phone: { contains: search } },
+        { email: { contains: search, mode: 'insensitive' } },
+        { treatment: { contains: search, mode: 'insensitive' } },
+        { message: { contains: search, mode: 'insensitive' } },
+      ]
+    }
+    
+    // Fetch leads from database
+    const leads = await prisma.lead.findMany({
+      where,
+      orderBy: {
+        createdAt: 'desc'
+      },
+      take: limit
+    })
+    
+    return NextResponse.json({
+      success: true,
+      leads,
+      count: leads.length
+    })
+    
+  } catch (error) {
+    console.error('Error fetching leads:', error)
+    
+    return NextResponse.json(
+      {
+        success: false,
+        error: 'Failed to fetch leads',
+        details: error instanceof Error ? error.message : 'Unknown error'
+      },
+      { status: 500 }
+    )
+  }
+}
+
+/**
+ * Handle PATCH request to update lead status
+ */
+export async function PATCH(request: Request) {
+  try {
+    const { searchParams } = new URL(request.url)
+    const id = searchParams.get('id')
+    
+    if (!id) {
+      return NextResponse.json(
+        { error: 'Lead ID is required' },
+        { status: 400 }
+      )
+    }
+    
+    const data = await request.json()
+    
+    // Update lead in database
+    const updatedLead = await prisma.lead.update({
+      where: { id },
+      data: {
+        status: data.status,
+        ...(data.telecrmSynced !== undefined && { telecrmSynced: data.telecrmSynced }),
+        ...(data.telecrmId && { telecrmId: data.telecrmId }),
+        ...(data.error && { error: data.error }),
+      }
+    })
+    
+    return NextResponse.json({
+      success: true,
+      lead: updatedLead
+    })
+    
+  } catch (error) {
+    console.error('Error updating lead:', error)
+    
+    return NextResponse.json(
+      {
+        success: false,
+        error: 'Failed to update lead',
+        details: error instanceof Error ? error.message : 'Unknown error'
       },
       { status: 500 }
     )
