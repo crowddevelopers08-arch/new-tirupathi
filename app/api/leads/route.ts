@@ -357,8 +357,7 @@ export async function GET(request: Request) {
     const status = searchParams.get('status')
     const formName = searchParams.get('formName')
     const search = searchParams.get('search')
-    
-    // Build filter conditions
+
     const where: any = {}
     
     if (status && status !== 'all') {
