@@ -63,7 +63,7 @@ export default function RootLayout({
     <html lang="en" className={`${outfit.variable} antialiased`}>
       <head>
         {/* Google Ads Tag */}
-        <script
+        {/* <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-17491253863"
         />
@@ -76,10 +76,10 @@ export default function RootLayout({
               gtag('config', 'AW-17491253863');
             `,
           }}
-        />
+        /> */}
 
         {/* Microsoft Clarity */}
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
               (function(c,l,a,r,i,t,y){
@@ -89,10 +89,10 @@ export default function RootLayout({
               })(window, document, "clarity", "script", "v9ejfj6kkm");
             `,
           }}
-        />
+        /> */}
 
         {/* Google Analytics Tag */}
-        <script
+        {/* <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-QNBK8JKTTS"
         />
@@ -105,7 +105,7 @@ export default function RootLayout({
               gtag('config', 'G-QNBK8JKTTS');
             `,
           }}
-        />
+        /> */}
 
         {/* Meta Pixel Code */}
         <script
@@ -134,8 +134,32 @@ export default function RootLayout({
           />
         </noscript>
         {/* End Meta Pixel Code */}
+
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-PJ2LL9CP');
+            `,
+          }}
+        />
+        {/* End Google Tag Manager */}
       </head>
       <body className="font-sans">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe 
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PJ2LL9CP"
+            height="0" 
+            width="0" 
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
         {children}
       </body>
     </html>
