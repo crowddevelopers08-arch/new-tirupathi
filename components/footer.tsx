@@ -17,7 +17,7 @@ const Footer = () => {
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
       `}</style>
     
-      <footer className="bg-[#101828] text-white pt-8 max-[426px]:pt-6 pb-8 relative overflow-hidden" style={{fontFamily: "'Outfit', sans-serif"}}>
+      <footer className="bg-[#101828] text-white pt-8 max-[426px]:pt-6 pb-8 relative overflow-hidden max-sm:mb-12" style={{fontFamily: "'Outfit', sans-serif"}}>
         {/* Decorative top element */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#d90f12] to-[#d90f12]"></div>
         

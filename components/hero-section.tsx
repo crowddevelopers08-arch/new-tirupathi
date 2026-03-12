@@ -3,16 +3,16 @@ import { useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 
-// Import your desktop images
-import heroImage1 from '../public/01.jpg';
-// import heroImage2 from '../public/02.jpg';
-import heroImage3 from '../public/03.jpg';
+// Desktop image URLs (external CDN)
+const heroImage1 = 'https://ik.imagekit.io/sunncpdro/public/01.jpg';
+// const heroImage2 = 'https://ik.imagekit.io/sunncpdro/public/02.jpg';
+const heroImage3 = 'https://ik.imagekit.io/sunncpdro/public/03.jpg';
 
-// Import your mobile images
-import mobileImage1 from '../public/04.jpg';
-import mobileImage2 from '../public/05.jpg';
-import mobileImage3 from '../public/06.jpg';
-import mobileImage4 from '../public/07.jpg';
+// Mobile image URLs (external CDN)
+const mobileImage1 = 'https://ik.imagekit.io/sunncpdro/public/04.jpg';
+const mobileImage2 = 'https://ik.imagekit.io/sunncpdro/public/05.jpg';
+const mobileImage3 = 'https://ik.imagekit.io/sunncpdro/public/06.jpg';
+const mobileImage4 = 'https://ik.imagekit.io/sunncpdro/public/07.jpg';
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -62,9 +62,9 @@ const HeroSection = () => {
     const checkScreenSize = () => {
       const width = window.innerWidth;
       const mobile = width < 768;
-      
+
       setIsMobile(mobile);
-      
+
       // Determine specific screen size category
       if (width < 320) {
         setScreenSize('xs');
@@ -126,10 +126,10 @@ const HeroSection = () => {
   // Get optimized image quality based on screen size
   const getImageQuality = () => {
     if (typeof window === 'undefined') return 85;
-    
+
     const width = window.innerWidth;
     const pixelRatio = window.devicePixelRatio || 1;
-    
+
     // Higher quality for high DPI screens and larger displays
     if (pixelRatio >= 2 || width >= 1920) {
       return 90;
@@ -211,7 +211,7 @@ const HeroSection = () => {
   // Render images for all screen sizes - full width with specific heights
   const renderImage = (slide: any, index: number) => {
     return (
-      <Image 
+      <Image
         src={slide.image}
         alt={slide.alt}
         fill
@@ -220,7 +220,6 @@ const HeroSection = () => {
         }`}
         priority={index === 0}
         quality={getImageQuality()}
-        placeholder="blur"
         sizes={getResponsiveSizes()}
         onLoad={() => {
           if (index === 0) setIsLoading(false);
@@ -237,7 +236,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section 
+    <section
       className="relative flex items-center justify-center overflow-hidden w-full bg-gray-100"
       style={{ height: containerHeight }}
     >
@@ -256,7 +255,7 @@ const HeroSection = () => {
             className="absolute inset-0 w-full h-full"
           >
             {renderImage(slide, index)}
-            
+
             {/* Overlay for better contrast and performance */}
             <div className="absolute inset-0 bg-black/5"></div>
           </div>
@@ -272,7 +271,7 @@ const HeroSection = () => {
         >
           <ChevronLeft className={`text-white ${getIconSize()}`} />
         </button>
-        
+
         <button
           onClick={nextSlide}
           className={`absolute z-20 rounded-full bg-white/20 hover:bg-white/30 transition-all duration-300 backdrop-blur-sm border border-white/20 ${getButtonSize()} ${getRightButtonPosition()} ${getButtonVerticalPosition()}`}
@@ -289,8 +288,8 @@ const HeroSection = () => {
             key={index}
             onClick={() => goToSlide(index)}
             className={`rounded-full transition-all duration-300 border border-white/30 ${
-              index === currentSlide 
-                ? 'bg-white scale-110' 
+              index === currentSlide
+                ? 'bg-white scale-110'
                 : 'bg-white/50 hover:bg-white/70'
             } ${
               // Responsive indicator sizes based on screen size

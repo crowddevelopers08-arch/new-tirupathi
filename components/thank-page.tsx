@@ -83,7 +83,7 @@ export default function ThankYou() {
         <footer className="bg-[#101828] py-8 px-6 border-t border-[#ff0279]/20">
           <div className="container mx-auto text-center">
             <p className="text-white">
-              Copyright © 2025 Adgro Hair Royapuram | Powered by Adglo Skin Royapuram
+              Copyright © 2025 Adgro Hair Tirupati | Powered by Adglo Skin Tirupati
             </p>
           </div>
         </footer>

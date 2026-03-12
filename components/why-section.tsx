@@ -213,7 +213,7 @@ export function WhySection() {
                 }}
               >
                 <Image
-                  src="/whyda.jpg"
+                  src="https://ik.imagekit.io/sunncpdro/public/whyda.jpg"
                   alt="Advanced Grohair hair restoration results"
                   fill
                   className="object-cover"
@@ -252,7 +252,7 @@ export function WhySection() {
                 variants={imageVariants}
               >
                 <Image
-                  src="/whyda.jpg"
+                  src="https://ik.imagekit.io/sunncpdro/public/whyda.jpg"
                   alt="Advanced Grohair hair restoration results"
                   fill
                   className="object-cover"

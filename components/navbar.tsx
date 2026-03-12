@@ -25,7 +25,7 @@ export function Navbar() {
           <Link href="/" className="flex items-center">
             <div className="relative w-52 h-12 max-[470px]:w-40 xs:w-48 xs:h-14 sm:w-52 sm:h-16 md:w-56 md:h-16 lg:w-64 lg:h-20">
               <Image
-                src="/adgrologo.png"
+                src="https://ik.imagekit.io/sunncpdro/public/adgrologo.png"
                 alt="SRM Aesthetic Institute Logo"
                 fill
                 className="object-contain"

@@ -6,42 +6,42 @@ const MarqueeImageRow = () => {
   const images = [
     {
       id: 1,
-      src: "bef1.jpg",
+      src: "https://ik.imagekit.io/sunncpdro/public/bef1.jpg",
       alt: "Logo 1"
     },
     {
       id: 2,
-      src: "bef2.jpg",
+      src: "https://ik.imagekit.io/sunncpdro/public/bef2.jpg",
       alt: "Logo 2"
     },
     {
       id: 3,
-      src: "bef3.jpg",
+      src: "https://ik.imagekit.io/sunncpdro/public/bef3.jpg",
       alt: "Logo 3"
     },
     {
       id: 4,
-      src: "bef4.jpg",
+      src: "https://ik.imagekit.io/sunncpdro/public/bef4.jpg",
       alt: "Logo 4"
     },
     {
       id: 5,
-      src: "bef5.jpg",
+      src: "https://ik.imagekit.io/sunncpdro/public/bef5.jpg",
       alt: "Logo 5"
     },
     {
       id: 6,
-      src: "bef6.jpg",
+      src: "https://ik.imagekit.io/sunncpdro/public/bef6.jpg",
       alt: "Logo 6"
     },
     {
       id: 7,
-      src: "bef7.jpg",
+      src: "https://ik.imagekit.io/sunncpdro/public/bef7.jpg",
       alt: "Logo 7"
     },
       {
       id: 7,
-      src: "bef8.jpg",
+      src: "https://ik.imagekit.io/sunncpdro/public/bef8.jpg",
       alt: "Logo 8"
     }
   ];

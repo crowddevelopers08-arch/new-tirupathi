@@ -44,7 +44,7 @@ const ContactForm = () => {
               <div className="flex justify-center mb-4 max-[470px]:mb-2">
                 <div className="w-32 h-32 max-[470px]:h-21 sm:w-40 rounded-full flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/adgrologo.png"
+                    src="https://ik.imagekit.io/sunncpdro/public/adgrologo.png"
                     alt="Advanced Grohair Logo"
                     width={160}
                     height={160}

@@ -39,37 +39,37 @@ const StudentTransformations = () => {
     {
       title: "Hair Transplant",
       description: "Dealing with hair loss or thinning? Our expert hair transplant solutions provide natural, permanent restoration for a fuller, thicker look.",
-      image: "hairtransplant.jpg",
+      image: "https://ik.imagekit.io/sunncpdro/public/hairtransplant.jpg",
       alt: "Hair transplant before and after results",
     },
     {
       title: "Baldness Treatment",
       description: "Regain lost hair and rebuild confidence with expert-backed restoration solutions that work. Whether it's partial or complete baldness, we've got a treatment for you.",
-      image: "baldnes.jpeg",
+      image: "https://ik.imagekit.io/sunncpdro/public/baldnes.jpeg",
       alt: "Baldness treatment results showing hair regrowth",
     },
     {
       title: "Hair Thinning Treatment",
       description: "Thicker, fuller hair is possible! Our specialized therapies strengthen your hair from the roots, reducing thinning and improving volume.",
-      image: "thinning.jpeg",
+      image: "https://ik.imagekit.io/sunncpdro/public/thinning.jpeg",
       alt: "Hair thinning treatment showing improved density",
     },
     {
       title: "Alopecia & Patchy Hair Loss",
       description: "Tired of dealing with sudden bald patches? Our advanced treatments target alopecia, reactivating dormant follicles for visible regrowth.",
-      image: "sep.jpg",
+      image: "https://ik.imagekit.io/sunncpdro/public/sep.jpg",
       alt: "Alopecia treatment showing patch regrowth",
     },
     {
       title: "Receding Hairline Solutions",
       description: "Stop your hairline from moving backward! Our customized approach helps strengthen existing hair and stimulate new growth for a more youthful look.",
-      image: "reced.png",
+      image: "https://ik.imagekit.io/sunncpdro/public/reced.png",
       alt: "Receding hairline treatment results",
     },
     {
       title: "Genetic Hair Loss Treatment",
       description: "Inherited hair loss doesn't have to define your look. Our personalized treatments tackle hereditary patterns, giving you the best chance at long-term regrowth.",
-      image: "genetic.jpg",
+      image: "https://ik.imagekit.io/sunncpdro/public/genetic.jpg",
       alt: "Genetic hair loss treatment progress",
     }
   ];
