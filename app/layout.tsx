@@ -16,23 +16,23 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/favvv.jpg",
+        url: "https://ik.imagekit.io/sunncpdro/public/favvv.jpg?updatedAt=1773322703968",
         sizes: "any",
       },
       {
-        url: "/favvv.jpg",
+        url: "https://ik.imagekit.io/sunncpdro/public/favvv.jpg?updatedAt=1773322703968",
         sizes: "16x16",
         type: "image/png",
       },
       {
-        url: "/favvv.jpg",
+        url: "https://ik.imagekit.io/sunncpdro/public/favvv.jpg?updatedAt=1773322703968",
         sizes: "32x32",
         type: "image/png",
       },
     ],
     apple: [
       {
-        url: "/favvv.jpg",
+        url: "https://ik.imagekit.io/sunncpdro/public/favvv.jpg?updatedAt=1773322703968",
         sizes: "180x180",
         type: "image/png",
       },
@@ -40,13 +40,13 @@ export const metadata: Metadata = {
     other: [
       {
         rel: "icon",
-        url: "/favvv.jpg",
+        url: "https://ik.imagekit.io/sunncpdro/public/favvv.jpg?updatedAt=1773322703968",
         sizes: "192x192",
         type: "image/png",
       },
       {
         rel: "icon",
-        url: "/favvv.jpg",
+        url: "https://ik.imagekit.io/sunncpdro/public/favvv.jpg?updatedAt=1773322703968",
         sizes: "512x512",
         type: "image/png",
       },
