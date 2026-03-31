@@ -70,12 +70,14 @@ const HeroSection = () => {
     const check = () => {
       const w = window.innerWidth;
       setIsMobile(w < 1024);
-      if (w < 375)       setBannerHeight("80vh");
-      else if (w < 475)  setBannerHeight("80vh");
-      else if (w < 640)  setBannerHeight("80vh");
-      else if (w < 768)  setBannerHeight("65vh");
-      else if (w < 1024) setBannerHeight("60vh");
-      else               setBannerHeight("80vh");
+      if (w < 325)       setBannerHeight("80vh");
+      else if (w < 375)  setBannerHeight("80vh");
+      else if (w < 425)  setBannerHeight("100vh");
+      else if (w < 475)  setBannerHeight("110vh");
+      else if (w < 640)  setBannerHeight("52vh");
+      else if (w < 768)  setBannerHeight("54vh");
+      else if (w < 1024) setBannerHeight("146vh");
+      else               setBannerHeight("180vh");
     };
     check();
     window.addEventListener("resize", check);
@@ -157,7 +159,7 @@ const HeroSection = () => {
      */
     <section
       className="w-full flex flex-col lg:block lg:relative bg-white"
-      style={{ height: isMobile ? "auto" : "80vh" }}
+      style={{ height: isMobile ? "auto" : "85vh" }}
     >
       {/* ════════════════════════════════════════
           CAROUSEL BANNER
