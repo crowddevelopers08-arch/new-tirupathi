@@ -59,7 +59,7 @@ export default function ThankYou() {
             
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
               <Link 
-                href="/" 
+                href="/skin-treatment" 
                 className="bg-[#d90f12] hover:bg-[#d90f12] text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg"
               >
                 Return to Home
