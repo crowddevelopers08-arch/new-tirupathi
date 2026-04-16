@@ -9,7 +9,7 @@ const outfit = Outfit({
 })
 
 export const metadata: Metadata = {
-  title: "Adgro Hair Thirupathi",
+  title: "Adgro Hair Tirupati",
   description:
     "Our experienced professionals and experts recommend you the best treatment that matches your needs and assist you achieve the desired results that you have always longed for.",
   generator: 'Nextjs15',
