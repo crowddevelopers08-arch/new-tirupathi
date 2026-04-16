@@ -114,14 +114,11 @@ const ConsultationFormPopup: React.FC<ConsultationFormPopupProps> = ({
   }
 
   const commonConcerns = [
-    "Hair Transplant",
-    "Hair Loss Treatment",
-    "Alopecia Areata",
-    "Dandruff Treatment",
-    "Baldness Treatment",
-    "Hair Thinning Treatment",
-    "Receding Hair Solutions",
-    "Genetic Hair Loss Treatment",
+    "Acne / Pimples",
+    "Acne Scars",
+    "Dark Spots / Pigmentation",
+    "Uneven Skin Tone",
+    "Dull Skin"
   ]
 
   return (
@@ -154,7 +151,7 @@ const ConsultationFormPopup: React.FC<ConsultationFormPopupProps> = ({
             <div className="bg-[#d90f12] text-white p-4 sm:p-6 rounded-t-xl sm:rounded-t-2xl">
               <div className="flex justify-between items-center">
                 <h2 className="text-lg sm:text-xl font-bold leading-tight pr-2">
-                  Book Hair Consultation With Trichologist
+                  Book Skin Consultation With Trichologist
                 </h2>
               </div>
             </div>
@@ -304,7 +301,7 @@ const ConsultationFormPopup: React.FC<ConsultationFormPopupProps> = ({
               {/* Hair Problems */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  What Hair Problems Are You Facing
+                  Describe Skin Problem In Detail
                 </label>
                 <textarea
                   name="hairProblems"

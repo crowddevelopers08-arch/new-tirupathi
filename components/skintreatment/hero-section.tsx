@@ -17,14 +17,11 @@ const mobileImage4 = "skin-mobile2.jpg";
 // const mobileImage4 = "https://ik.imagekit.io/sunncpdro/public/07.jpg";
 
 const commonConcerns = [
-  "Hair Transplant",
-  "Hair Loss Treatment",
-  "Alopecia Areata",
-  "Dandruff Treatment",
-  "Baldness Treatment",
-  "Hair Thinning Treatment",
-  "Receding Hair Solutions",
-  "Genetic Hair Loss Treatment",
+    "Acne / Pimples",
+    "Acne Scars",
+    "Dark Spots / Pigmentation",
+    "Uneven Skin Tone",
+    "Dull Skin"
 ];
 
 const inputClass =
@@ -255,7 +252,7 @@ const HeroSection = () => {
             </span>
           </div>
           <h2 className="text-sm sm:text-base font-bold leading-snug">
-            Book Hair Consultation With Trichologist
+            Book Skin Consultation With Trichologist
           </h2>
           <div className="mt-2 flex gap-1">
             <div className="h-[2px] w-8 rounded-full bg-white/80" />

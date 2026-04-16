@@ -107,7 +107,7 @@ const MarqueeImageRow = () => {
 
   return (
     // Add sectionRef to the main container
-    <section ref={sectionRef} style={{
+    <section className='lg:pb-8 lg:pt-6' ref={sectionRef} style={{
       backgroundColor: 'white',
       borderRadius: '0.75rem',
       position: 'relative'
@@ -129,7 +129,7 @@ const MarqueeImageRow = () => {
           variants={titleVariants}
         >
           <div className="relative inline-block">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight ">
               <motion.span 
                 className="relative inline-block px-4 py-2 text-[#d90f12]"
                 whileHover={{
@@ -165,7 +165,7 @@ const MarqueeImageRow = () => {
             padding: '1.5rem 0'
           }}
         >
-          <div
+          <div 
             ref={scrollRef}
             style={{
               display: 'flex',

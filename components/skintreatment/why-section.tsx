@@ -194,12 +194,12 @@ export function WhySection() {
               {/* Left side - First 2 cards */}
               <div className="w-full lg:w-[30%] grid grid-cols-1 auto-rows-fr gap-3 sm:gap-4 md:gap-6 h-full">
                 <BentoFeature
-                  title="Proven Expertise"
-                  desc="5+ years of experience in advanced hair restoration."
+                  title="Proven Skin Expertise"
+                  desc="With 5+ years of experience, we’ve helped thousands achieve healthy, glowing skin."
                 />
                 <BentoFeature
-                  title="Personalized Plans"
-                  desc="No generic treatments, only what works for you."
+                  title="Personalized Skin Plans"
+                  desc="No one-size-fits-all. Every treatment is customized for your skin type and concern."
                 />
               </div>
 
@@ -228,12 +228,12 @@ export function WhySection() {
               {/* Right side - Last 2 cards */}
               <div className="w-full lg:w-[30%] grid grid-cols-1 auto-rows-fr gap-3 sm:gap-4 md:gap-6 h-full">
                 <BentoFeature
-                  title="Certified Dermatologists"
-                  desc="Trusted professionals leading every treatment."
+                  title="Certified Skin Specialists"
+                  desc="Treatments performed by experienced dermatologists & trained professionals."
                 />
                 <BentoFeature
                   title="2,00,000+ Happy Patients"
-                  desc="Real results, real confidence."
+                  desc="Real transformations, real confidence."
                 />
               </div>
             </motion.div>

@@ -62,7 +62,7 @@ const StudentTransformations = () => {
     },
     {
       title: "Glutathione Skin Glow Therapy",
-      description: "SAchieve radiant, even-toned skin with powerful antioxidant-based treatments.",
+      description: "Achieve radiant, even-toned skin with powerful antioxidant-based treatments.",
       image: "treat4.jpg",
       alt: "Receding hairline treatment results",
     },
@@ -215,7 +215,7 @@ const StudentTransformations = () => {
         onOpenChange={setIsPopupOpen}
       />
 
-      <div ref={sectionRef} className="relative overflow-hidden bg-[#101828] mt-20 max-[470px]:mt-10 max-[470px]:py-6 py-12 sm:py-12 lg:py-12" style={{fontFamily: "'Outfit', sans-serif"}}>
+      <div ref={sectionRef} className="relative overflow-hidden bg-[#101828] mt-2 max-[470px]:mt-10 max-[470px]:py-6 py-12 sm:py-12 lg:py-12" style={{fontFamily: "'Outfit', sans-serif"}}>
         {/* Background Decoration */}
         <div className="absolute inset-0 opacity-5">
           <div className="bg-blob-1 absolute top-0 left-0 w-72 h-72 bg-[#d90f12] rounded-full mix-blend-multiply filter blur-xl"></div>
