@@ -1,0 +1,20 @@
+
+> my-v0-project@0.1.0 dev
+> prisma generate && next dev --hostname 127.0.0.1 --port 3000
+
+Prisma schema loaded from prisma\schema.prisma
+
+✔ Generated Prisma Client (v6.16.3) to .\node_modules\@prisma\client in 285ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Interested in query caching in just a few lines of code? Try Accelerate today! https://pris.ly/tip-3-accelerate
+
+   ▲ Next.js 16.0.5 (Turbopack)
+   - Local:         http://127.0.0.1:3000
+   - Network:       http://127.0.0.1:3000
+   - Environments: .env
+
+ ✓ Starting...
+   Suggestion: If you intended to restart next dev, terminate the other process, and then try again.
+[?25h
