@@ -6,42 +6,42 @@ const MarqueeImageRow = () => {
   const images = [
     {
       id: 1,
-      src: "bfaf1.jpg",
+      src: "/transplant/bfaf-trnspts1.jpg",
       alt: "Logo 1"
     },
     {
       id: 2,
-      src: "bfaf2.jpg",
+      src: "/transplant/bfaf-trnspts2.jpg",
       alt: "Logo 2"
     },
     {
       id: 3,
-      src: "bfaf3.jpg",
+      src: "/transplant/bfaf-trnspts3.jpg",
       alt: "Logo 3"
     },
     {
       id: 4,
-      src: "bfaf4.jpg",
+      src: "/transplant/bfaf-trnspts4.jpg",
       alt: "Logo 4"
     },
     {
       id: 5,
-      src: "bfaf5.jpg",
+      src: "/transplant/bfaf-trnspts5.jpg",
       alt: "Logo 5"
     },
     {
       id: 6,
-      src: "bfaf6.jpg",
+      src: "/transplant/bfaf-trnspts6.jpg",
       alt: "Logo 6"
     },
     {
       id: 7,
-      src: "bfaf7.jpg",
+      src: "/transplant/bfaf-trnspts7.jpg",
       alt: "Logo 7"
     },
       {
       id: 8,
-      src: "bfaf8.jpg",
+      src: "/transplant/bfaf-trnspts8.jpg",
       alt: "Logo 8"
     }
   ];
