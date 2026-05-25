@@ -32,7 +32,7 @@ const sections = [
   {
     title: "Hair Restoration for Men & Women",
     description: "Customized hair restoration solutions for both men and women experiencing different stages of hair loss.",
-    image: "men-women.png",
+    image: "ima.jpg",
     alt: "Hair restoration treatments for men and women",
   },
 ];

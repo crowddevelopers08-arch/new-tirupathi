@@ -21,11 +21,9 @@ export default function Home() {
       <BestHairRestoration />
       <WhySection />
       <StudentTransformations />
-
+      <ClinicChoice />
       <VideoCarousel />
       <HairCareBanner />
-      <ClinicChoice />
-      
       <FAQ />
       <ContactForm />
       {/* <ContactForm /> */}
