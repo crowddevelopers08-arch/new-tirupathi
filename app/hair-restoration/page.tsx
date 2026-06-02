@@ -1,16 +1,17 @@
-import BestHairTransplantClinic from "@/components/hairrestore/best-hair-transplant-clinic";
-import Chatbot from "@/components/hairrestore/chatbots";
-import ClinicChoice from "@/components/hairrestore/clinic-choice";
-import ContactForm from "@/components/hairrestore/contact";
-import FAQ from "@/components/hairrestore/faq";
-import Footer from "@/components/hairrestore/footer";
-import HairCareBanner from "@/components/hairrestore/haircarebanner";
-import HeroSection from "@/components/hairrestore/hero-section";
-import MarqueeImageRow from "@/components/hairrestore/marqueeImagerow";
-import { Navbar } from "@/components/hairrestore/navbar";
-import StudentTransformations from "@/components/hairrestore/studenttransformations";
-import VideoCarousel from "@/components/hairrestore/video";
-import { WhySection } from "@/components/hairrestore/why-section";
+import BestHairRestoration from "@/components/transplant/best-hair-restoration";
+import Chatbot from "@/components/transplant/chatbots";
+import ClinicChoice from "@/components/transplant/clinic-choice";
+import ContactForm from "@/components/transplant/contact";
+import FAQ from "@/components/transplant/faq";
+import Footer from "@/components/transplant/footer";
+import HairCareBanner from "@/components/transplant/haircarebanner";
+import HeroSection from "@/components/transplant/hero-section";
+import MarqueeImageRow from "@/components/transplant/marqueeImagerow";
+import { Navbar } from "@/components/transplant/navbar";
+import StudentTransformations from "@/components/transplant/studenttransformations";
+import VideoCarousel from "@/components/transplant/video";
+import { WhySection } from "@/components/transplant/why-section";
+
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <MarqueeImageRow />
-      <BestHairTransplantClinic />
+      <BestHairRestoration />
       <WhySection />
       <StudentTransformations />
       <VideoCarousel />

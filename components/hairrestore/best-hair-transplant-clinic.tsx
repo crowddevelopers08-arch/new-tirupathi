@@ -38,7 +38,7 @@ export default function BestHairTransplantClinic() {
             <h2 className="mx-auto max-w-5xl text-3xl font-bold leading-tight tracking-tight text-[#d90f12] sm:text-4xl lg:text-5xl">
               Best Hair Transplant Clinic in Tirupati
             </h2>
-            <p className="mt-3 text-lg font-semibold text-white sm:text-xl">Advanced Grohair Clinic</p>
+            <p className="mt-3 text-lg font-semibold text-black sm:text-xl">Advanced Grohair Clinic</p>
             <div className="mx-auto mt-4 h-1 w-full max-w-xl bg-gradient-to-r from-transparent via-[#d90f12] to-transparent" />
           </div>
 

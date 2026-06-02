@@ -119,12 +119,17 @@ export default function HeroSection() {
       <div className="absolute -left-40 top-20 h-80 w-80 rounded-full bg-[#d90f12]/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="mb-5 text-white">
-
-          <h1 className="max-w-5xl text-2xl font-bold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
-            Best Hair Regrowth  Clinic in Tirupati | Advanced Grohair
-          </h1>
-        </div>
+        <div className="mb-4 text-white lg:mb-4">
+  <h1 className="max-w-6xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-4xl">
+    Best{" "}
+    <span className="relative inline-block text-[#d90f12]">
+      Hair Transplant
+      <span className="absolute bottom-[-4px] left-0 h-[3px] w-full origin-left animate-[lineIn_0.6s_ease_forwards] rounded-full bg-[#d90f12]" />
+    </span>{" "}
+    Clinic in Tirupati |{" "}
+    <span className="text-[#d90f12]">Advanced Grohair</span>
+  </h1>
+</div>
 
         <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch">
           <div className="flex rounded-2xl bg-white p-2 shadow-2xl shadow-black/30">
