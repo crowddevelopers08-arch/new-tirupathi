@@ -7,7 +7,6 @@ import { Button } from "./ui/button";
 const heroVideoUrl = "https://www.instagram.com/p/DUvQg96D3TW/embed";
 
 const heroHighlights = [
-  "Proven Results",
   "Advanced FUE & FUT Technology",
   "Natural Hairline Design",
   "Affordable Hair Transplant Cost in Tirupati",
@@ -24,7 +23,7 @@ const commonConcerns = [
 ];
 
 const inputClass =
-  "w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm transition-all duration-200 placeholder:text-gray-400 focus:border-[#d90f12] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#d90f12]/30 disabled:cursor-not-allowed disabled:bg-gray-100";
+  "w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm transition-all duration-200 placeholder:text-gray-400 focus:border-[#d90f12] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#d90f12]/30 disabled:cursor-not-allowed disabled:bg-gray-100 lg:py-2.5";
 
 const labelClass =
   "mb-0.5 block text-[10px] font-semibold uppercase tracking-wide text-gray-500";
@@ -111,15 +110,15 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative overflow-hidden bg-[#101828] bg-cover bg-center px-4 py-6 sm:px-6 lg:py-8"
+      className="relative overflow-hidden bg-[#101828] bg-cover bg-center px-4 py-6 sm:px-6 lg:min-h-[calc(100vh-92px)] lg:py-4"
       style={{ backgroundImage: "url('/Hairline-Restoration.jpg')" }}
     >
       <div className="absolute inset-0 bg-[#101828]/55" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#d90f12]/70 to-transparent" />
       <div className="absolute -left-40 top-20 h-80 w-80 rounded-full bg-[#d90f12]/10 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl">
-        <div className="mb-4 text-white lg:mb-4">
+      <div className="relative mx-auto flex max-w-7xl flex-col lg:min-h-[calc(100vh-124px)]">
+        <div className="mb-4 text-white lg:mb-3">
   <h1 className="max-w-6xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-4xl">
     Best{" "}
     <span className="relative inline-block text-[#d90f12]">
@@ -131,24 +130,42 @@ export default function HeroSection() {
   </h1>
 </div>
 
-        <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch">
+        <div className="grid gap-5 lg:grid-cols-2 lg:items-start">
           <div className="flex rounded-2xl bg-white p-2 shadow-2xl shadow-black/30">
-            <div className="flex w-full items-center justify-center overflow-hidden rounded-xl border border-gray-100 bg-white">
-              <div className="relative h-[430px] w-full max-w-[330px] overflow-hidden bg-white sm:h-[455px] lg:h-[445px]">
-                <iframe
-                  src={heroVideoUrl}
-                  title="Advanced Grohair Instagram video"
-                  className="absolute left-1/2 top-0 h-[610px] w-[390px] origin-top -translate-x-1/2 scale-[0.705] overflow-hidden sm:scale-[0.745] lg:scale-[0.73]"
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  scrolling="no"
-                />
+            <div className="flex w-full flex-col overflow-hidden rounded-xl border border-gray-100 bg-white">
+              <div className="flex items-center justify-center bg-white px-3 py-3 lg:py-2">
+                <div className="relative h-[390px] w-full max-w-[330px] overflow-hidden rounded-lg bg-white sm:h-[430px] lg:h-[320px] xl:h-[335px]">
+                  <iframe
+                    src={heroVideoUrl}
+                    title="Advanced Grohair Instagram video"
+                    className="absolute left-1/2 top-0 h-[610px] w-[390px] origin-top -translate-x-1/2 scale-[0.64] overflow-hidden sm:scale-[0.705] lg:scale-[0.54] xl:scale-[0.56]"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    scrolling="no"
+                  />
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white via-[#fff7f7] to-[#f3f6fb] p-4 lg:p-4">
+                <ul className="grid gap-2.5 sm:grid-cols-2 lg:gap-2">
+                  {heroHighlights.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2.5 rounded-xl border border-[#d90f12]/10 bg-white px-3 py-2.5 text-sm font-semibold leading-snug text-gray-800 shadow-sm lg:min-h-[54px] lg:py-2 lg:text-xs"
+                    >
+                      <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-50">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                      </span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
 
           <div className="flex rounded-2xl bg-white p-2 shadow-2xl shadow-black/30">
             <div className="flex w-full flex-col overflow-hidden rounded-xl border border-gray-100">
-              <div className="bg-[#d90f12] px-5 py-4 text-white sm:px-6">
+              <div className="bg-[#d90f12] px-5 py-4 text-white sm:px-6 lg:py-3">
               <div className="mb-1 flex items-center gap-2">
                 <Phone className="h-4 w-4 opacity-75" />
                 <span className="text-[10px] font-semibold uppercase tracking-widest opacity-80">
@@ -158,7 +175,7 @@ export default function HeroSection() {
               <h2 className="text-base font-bold leading-snug sm:text-lg">
                 Book Hair Consultation With Hair Restoration Specialists
               </h2>
-              <div className="mt-3 flex gap-1">
+              <div className="mt-3 flex gap-1 lg:mt-2">
                 <div className="h-[2px] w-8 rounded-full bg-white/80" />
                 <div className="h-[2px] w-3 rounded-full bg-white/40" />
                 <div className="h-[2px] w-1.5 rounded-full bg-white/20" />
@@ -186,7 +203,7 @@ export default function HeroSection() {
               <form
                 id="adgrohairwebsiteform"
                 onSubmit={handleSubmit}
-                className="flex flex-1 flex-col gap-2.5 px-4 py-4 sm:px-5"
+                className="flex flex-col gap-2.5 px-4 py-4 sm:px-5 lg:gap-3 lg:px-6 lg:pb-3 lg:pt-5"
               >
                 {submitStatus === "success" && (
                   <div className="flex items-center gap-2 rounded-lg border border-green-200 bg-green-50 p-2.5">
@@ -326,14 +343,14 @@ export default function HeroSection() {
                     rows={2}
                     disabled={isSubmitting}
                     placeholder="Briefly describe your hair concern..."
-                    className={`${inputClass} resize-none`}
+                    className={`${inputClass} resize-none lg:min-h-[88px]`}
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting || !isFormValid}
-                  className="mt-1 w-full rounded-lg py-2.5 text-sm font-bold text-white shadow-lg disabled:cursor-not-allowed disabled:opacity-60"
+                  className="mt-1 w-full rounded-lg py-2.5 text-sm font-bold text-white shadow-lg disabled:cursor-not-allowed disabled:opacity-60 lg:py-3"
                   style={{
                     background:
                       isSubmitting || !isFormValid
@@ -351,16 +368,16 @@ export default function HeroSection() {
                   )}
                 </button>
 
-                <p className="pb-1 text-center text-[10px] tracking-wide text-gray-400">
+                {/* <p className="text-center text-[10px] tracking-wide text-gray-400">
                   100% Private &amp; Confidential
-                </p>
+                </p> */}
               </form>
               )}
             </div>
           </div>
         </div>
 
-        <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-4">
           <a
             href="tel:+918940056789"
             className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/10 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:border-[#d90f12]/60 hover:bg-[#d90f12]/20"
@@ -374,20 +391,6 @@ export default function HeroSection() {
             >
               Book Now
             </Button>
-        </div>
-
-        <div className="mt-5 grid overflow-hidden rounded-xl  bg-white/[0.04]">
-            <ul className=" grid gap-2 sm:grid-cols-5">
-              {heroHighlights.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-2.5 rounded-xl border border-white/10 bg-white/[0.04] p-2.5 text-xs font-semibold text-[#e7e9f3] sm:text-sm"
-                >
-                  <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
         </div>
       </div>
     </section>

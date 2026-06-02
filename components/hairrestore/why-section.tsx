@@ -217,8 +217,8 @@ export function WhySection() {
                 }}
               >
                 <Image
-                  src="skin.jpg"
-                  alt="Advanced Grohair hair restoration results"
+                  src="hair-trans.png"
+                  alt="Advanced Grohair hair transplant results"
                   fill
                   className="object-cover"
                   data-parallax="y"
@@ -260,8 +260,8 @@ export function WhySection() {
                 variants={imageVariants}
               >
                 <Image
-                  src="skin.jpg"
-                  alt="Advanced Grohair hair restoration results"
+                  src="hair-trans.png"
+                  alt="Advanced Grohair hair transplant results"
                   fill
                   className="object-cover"
                   placeholder="blur"

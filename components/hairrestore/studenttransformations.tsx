@@ -36,7 +36,7 @@ const StudentTransformations = () => {
     {
       title: "Hair Transplant for Male Pattern Baldness",
       description: "Restore confidence with permanent hair transplant solutions for stage 3 hair loss and advanced baldness.",
-      image: "/images.png",
+      image: "/Hair-Transplant.png",
       alt: "Hair transplant before and after results",
     },
     {

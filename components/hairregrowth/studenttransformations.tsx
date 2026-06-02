@@ -39,31 +39,31 @@ const StudentTransformations = () => {
     {
       title: "Hair Regrowth Treatment",
       description: "Scientifically designed hair regrowth treatments to reduce hair fall and promote healthier hair growth.",
-      image: "/regrowth/bfaf-regro5.png",
+      image: "/regro-img.png",
       alt: "Hair transplant before and after results",
     },
     {
       title: "Hair Treatment for Regrowth",
       description: "Customized therapies focused on improving scalp health, strengthening roots, and restoring hair density.",
-      image: "/regrowth/bfaf-regro4.png",
+      image: "/regro-img1.png",
       alt: "Baldness treatment results showing hair regrowth",
     },
     {
       title: "Advanced Hair Regrowth Treatment",
       description: "Modern non-surgical solutions for hair loss and hair regrowth with visible improvements over time.",
-      image: "/regrowth/bfaf-regro3.png",
+      image: "/regro-img2.png",
       alt: "Hair thinning treatment showing improved density",
     },
     {
       title: "Laser Hair Regrowth Therapy",
       description: "Safe and effective laser treatment for hair regrowth designed for both men and women.",
-      image: "/regrowth/bfaf-regro2.png",
+      image: "/regro-img3.png",
       alt: "Alopecia treatment showing patch regrowth",
     },
     {
       title: "Hair Loss and Hair Regrowth Treatment",
       description: "Comprehensive solutions targeting hair thinning, scalp weakness, and poor hair growth cycles.",
-      image: "/regrowth/bfaf-regro1.png",
+      image: "/regro-img4.png",
       alt: "Receding hairline treatment results",
     },
   ];
