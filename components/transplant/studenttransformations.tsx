@@ -195,7 +195,7 @@ const StudentTransformations = () => {
 
       <ConsultationFormPopup isOpen={isPopupOpen} onOpenChange={setIsPopupOpen} />
 
-      <div
+      <div 
         ref={sectionRef}
         className="relative overflow-hidden bg-[#101828] mt-2 max-[470px]:mt-10 max-[470px]:py-6 py-12 sm:py-12 lg:py-12"
         style={{ fontFamily: "'Outfit', sans-serif" }}

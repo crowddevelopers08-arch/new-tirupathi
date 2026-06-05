@@ -84,7 +84,7 @@ const FAQ = () => {
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
       `}</style>
-      <section ref={sectionRef} className="py-10 max-[470px]:py-6 bg-background" style={{fontFamily: "'Outfit', sans-serif"}}>
+      <section id='faq' ref={sectionRef} className="py-10 max-[470px]:py-6 bg-background" style={{fontFamily: "'Outfit', sans-serif"}}>
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {/* Remove the duplicate heading and use only the animated one */}

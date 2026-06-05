@@ -69,7 +69,7 @@ const VideoCarousel = () => {
   };
 
   return (
-    <div className="w-full bg-[#101828] py-12 max-[470px]:py-6 px-4">
+    <div id="Testimonials" className="w-full bg-[#101828] py-12 max-[470px]:py-6 px-4">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           ref={sectionRef}

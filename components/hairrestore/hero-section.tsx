@@ -79,7 +79,7 @@ export default function HeroSection() {
           pincode: formData.pincode,
           consent: true,
           source: typeof window !== "undefined" ? window.location.href : "unknown",
-          formName: "Hair Consultation Form",
+          formName: "hair-restore",
         }),
       });
       const result = await response.json();

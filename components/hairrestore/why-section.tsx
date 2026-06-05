@@ -147,7 +147,7 @@ export function WhySection() {
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
       `}</style>
-      <div className="bg-[#101828] overflow-hidden" style={{fontFamily: "'Outfit', sans-serif"}}>
+      <div id="success" className="bg-[#101828] overflow-hidden" style={{fontFamily: "'Outfit', sans-serif"}}>
         <section 
           ref={sectionRef}
           id="why" 
