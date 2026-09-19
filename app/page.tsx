@@ -2,6 +2,7 @@
 // import FAQ from "@/components/faq";
 import Footer from "@/components/footer";
 import HeroSection from "@/components/hero-section";
+import ConsultationForm from "@/components/consultation-form";
 import { Navbar } from "@/components/navbar";
 import { WhySection } from "@/components/why-section";
 import StudentTransformations from "@/components/studenttransformations";
@@ -18,6 +19,7 @@ export default function Home() {
     <div>
       <Navbar />
       <HeroSection />
+      <ConsultationForm />
       <WhySection />
       <StudentTransformations />
       <MarqueeImageRow />
