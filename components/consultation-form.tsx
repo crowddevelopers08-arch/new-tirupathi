@@ -82,7 +82,7 @@ const ConsultationForm = () => {
 
   // ─── Render ───────────────────────────────────────────────────────────────
   return (
-    <section className="w-full bg-gray-50 px-4 py-10 sm:px-6 sm:py-14">
+    <section id="form" className="w-full scroll-mt-16 bg-gray-50 px-4 py-10 sm:px-6 sm:py-14">
       <div className="mx-auto w-full max-w-xl">
       <div className="w-full overflow-hidden rounded-xl bg-white shadow-2xl">
         {/* ── Header ── */}
